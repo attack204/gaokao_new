@@ -10,7 +10,6 @@ import com.gaokao.common.meta.vo.volunteer.UserFormDetailVO;
 import com.gaokao.common.service.AdviseService;
 import com.gaokao.common.service.VolunteerService;
 
-import com.gaokao.common.utils.UserUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
