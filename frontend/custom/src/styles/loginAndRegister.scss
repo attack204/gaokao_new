@@ -1,0 +1,40 @@
+.poster {
+  background: url("../../static/img/Nighthawk.jpg") no-repeat center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: fixed;
+  overflow: auto;
+}
+
+.register-container {
+  position: relative;
+  border-radius: 15px;
+  background-clip: padding-box;
+  margin: 90px auto;
+  width: 500px;
+  padding: 35px 35px 15px 35px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 0 25px #cac6c6;
+}
+
+.register-title {
+  margin: 0px auto 40px auto;
+  text-align: center;
+  color: #303133;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.router-link-style {
+  float: right;
+  margin-top: 6px;
+  color: #409EFF;
+}
+
+.particles-js {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}

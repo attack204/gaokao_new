@@ -1,0 +1,128 @@
+$bg:#283443;   //黑色
+$light_gray: #eee;// 白色
+$cursor: #fff;// 白
+
+@supports (-webkit-mask: none) and (not (cater-color: $bg)) {
+  .login-container .el-input input{
+    //密码是小点点的时候的颜色
+    color: $bg;
+    //输入框里的数据
+    &::first-line {
+      color: $bg;
+    }
+  }
+}
+
+/* reset element-ui css */
+.login-container {
+  .el-input {
+    display: inline-block;
+    height: 47px;
+    width: 85%;
+    //background: transparent;
+    //默认是输入框的那一小块的颜色
+  //    -webkit-appearance: none;
+      border-radius: 0px;
+      padding: 12px 5px 12px 15px;
+      color: $bg;
+      height: 47px;
+    //光标颜色
+      caret-color: $bg;
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
+        -webkit-text-fill-color: #ffffff !important;
+      }
+    }
+  }
+  .el-form-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color:#454545;// 黑色
+
+  }
+$bg:#2d3a4b;//黑色
+$dark_gray:#889aa4; //灰色
+$light_gray:#000000; //白
+
+.login-container {
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //
+  //position: relative;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  // 登录的大框颜色
+  .login-form {
+    // 定义表单位置
+    position: relative;
+    // 圆角边框
+    border-radius: 6px;
+    background: #ffffff;
+    width: 520px;
+    padding: 16px 35px 0;
+    .el-input {
+      height: 38px;
+      input {
+        height: 38px;
+      }
+    }
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+  .tips {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+  .svg-container {
+    padding: 6px 5px 6px 15px;
+    //图标的颜色
+    color:$dark_gray;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+  }
+  // “高考志愿推荐系统
+  .title-container {
+    position: relative;
+    .title {
+      font-size: 23px;
+      color: $light_gray;
+      margin: 0px auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+    //中英文设置语言
+    .set-language {
+      color: #1f2d3d;
+      position: absolute;
+      top: 5px;
+      right: 0px;
+    }
+  }
+  // 显示密码的眼睛图标
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    color: $dark_gray;
+    cursor: pointer;
+    user-select: none;
+  }
+  .thirdparty-button {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+  }
+
+}

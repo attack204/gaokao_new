@@ -1,0 +1,61 @@
+
+env: DEV
+spring:
+  datasource:
+    url: jdbc:mysql://81.70.157.204:3306/Gaokao?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+    username: root
+    password: Gaokao522
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: o2o
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+wx:
+  #支付
+  pay:
+    # 小程序appid
+    appId: wxfd24dcdd82129aaa
+    # 商户号
+    mchId: 1613925940
+    # api密钥
+    mchKey: Ljmswxfd24dcdd82129aaa0123456789
+    # 证书路径
+    keyPath: classpath:cert/apiclient_cert.p12
+    # 微信支付异步回调地址
+    payCallbackUrl:
+    # 微信支付二维码key
+    qrcodeKey: wxpay_qrcode
+    # 微信支付二维码过期时间为 < 2小时（微信二维码code_url有效期为2小时）
+    qrcodeExpire: 7000
+    # 支付方式，取值如下：JSAPI，NATIVE，APP
+    tradeType: NATIVE
+    # 商户秘钥
+    secrectKey:
+    #统一下单地址
+    placeOrderUrl:
+    # APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP
+    spbillCreateIp:
+
+    sanbox: true
+
+
+server:
+  port: 9090
+

@@ -1,0 +1,41 @@
+env: online
+spring:
+  datasource:
+    #xxx.xxx.xxx需替换为机器的主私网ip
+    url: jdbc:mysql://xxx.xxx.xxx:3306/gaokao?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+    username: Gaokao
+    password: Gaokao522
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: o2o
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  config: classpath:config/online/logback.xml
+
+server:
+  port: 9010    #待确定

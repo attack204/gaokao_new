@@ -1,0 +1,74 @@
+
+env: DEV
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: default-producer
+    sendMsgTimeout: 20000
+  consumer:
+    group: default-consumer
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3310/Gaokao?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: o2o
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      ssl: false
+
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+  application:
+    name: gaokao-server
+
+wx:
+  #支付
+  pay:
+    # 小程序appid
+    appId: wx6c3f8b761f7a1e03
+    # 商户号
+    mchId: 1613925940
+    # api密钥
+    mchKey: Ljmswxfd24dcdd82129aaa0123456789
+    # 证书路径
+    keyPath: classpath:cert/apiclient_cert.p12
+    # 支付方式，取值如下：JSAPI，NATIVE，APP
+    tradeType: NATIVE
+    #通知地址
+    notifyUrl:  http://7zcc7f.natappfree.cc/xhr/v1/orders/wxPayNotify
+    #请求地址
+    UnifiedOrderUrl : https://api.mch.weixin.qq.com/v3/pay/transactions/native
+
+    sanbox: true
+
+#logging:
+#  config: classpath:config/dev/logback.xml
+
+
+server:
+  port: 9090
+

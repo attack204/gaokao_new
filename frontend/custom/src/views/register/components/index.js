@@ -1,0 +1,1 @@
+export { default as UserInfoDialog } from '@/components/UserInfoDialog/UserInfoDialog'
